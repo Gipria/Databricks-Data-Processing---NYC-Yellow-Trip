@@ -1,10 +1,7 @@
-Tempo/Duração: tpep_pickup_datetime, tpep_dropoff_datetime
-
-Geolocalização: PULocationID, DOLocationID (cruzando com tabela de zonas)
-
-Custos: fare_amount, extra, mta_tax, tip_amount, tolls_amount, improvement_surcharge, congestion_surcharge, airport_fee, total_amount
-
-Pagamento: payment_type, tip_amount
+- **Tempo/Duração:** tpep_pickup_datetime, tpep_dropoff_datetime
+- **Geolocalização:** PULocationID, DOLocationID (cruzando com tabela de zonas)
+- **Custos:** fare_amount, extra, mta_tax, tip_amount, tolls_amount, improvement_surcharge, congestion_surcharge, airport_fee, total_amount
+- **Pagamento:** payment_type, tip_amount
 
 
 | Nome da Coluna               | Descrição                                                                                                                              | Valores/Exemplos                                                                                                |
