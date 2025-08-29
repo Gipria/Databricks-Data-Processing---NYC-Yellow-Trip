@@ -15,3 +15,7 @@ Primeiro criei um notbook Databricks para dar inicio ao processamento de dados. 
 
 Notbooks nas diferentes camadas: [Bronze](https://dbc-ef780d3c-c43c.cloud.databricks.com/editor/notebooks/2731816656921143?o=609239402676531) | [Silver](https://dbc-ef780d3c-c43c.cloud.databricks.com/editor/notebooks/2731816656921142?o=609239402676531) | [Gold](https://dbc-ef780d3c-c43c.cloud.databricks.com/editor/notebooks/3327772790411468?o=609239402676531)
 
+
+> Essa divisão é importante no caso de grande volume de dados! Porque facilita a manutenção, otimiza, evita repitir dados, ganha rastreabilidade maior em caso de erros e permite disponibilizar os dados para diferentes tipos de consumidores.
+
+### Próximo passo: Criar Jobs
