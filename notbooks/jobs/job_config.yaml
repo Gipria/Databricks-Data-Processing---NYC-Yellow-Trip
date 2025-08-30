@@ -1,0 +1,41 @@
+resources:
+  jobs:
+    Raw_Job:
+      name: Raw_Job
+      schedule:
+        quartz_cron_expression: 20 0 3 * * ?
+        timezone_id: America/Sao_Paulo
+        pause_status: UNPAUSED
+      tasks:
+        - task_key: Raw_Ingestion
+          notebook_task:
+            notebook_path: /Workspace/Users/${EMAIL}/Raw
+            source: WORKSPACE
+          email_notifications:
+            on_failure:
+              - ${EMAIL}
+        - task_key: Data_Cleaning
+          depends_on:
+            - task_key: Raw_Ingestion
+          notebook_task:
+            notebook_path: /Workspace/Users/${EMAIL}/Data Source
+            source: WORKSPACE
+          email_notifications:
+            on_failure:
+              - ${EMAIL}
+        - task_key: Data_analysis
+          depends_on:
+            - task_key: Data_Cleaning
+          notebook_task:
+            notebook_path: /Workspace/Users/${EMAIL}/Data Lake
+            source: WORKSPACE
+          email_notifications:
+            on_failure:
+              - ${EMAIL}
+      git_source:
+        git_url: https://github.com/User/Databricks-Data-Processing---NYC-Yellow-Trip
+        git_provider: gitHub
+        git_branch: main
+      queue:
+        enabled: true
+      performance_target: STANDARD
