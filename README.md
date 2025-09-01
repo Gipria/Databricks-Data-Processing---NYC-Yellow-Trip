@@ -36,9 +36,9 @@ Notbooks nas diferentes camadas no databricks: [Bronze](https://dbc-ef780d3c-c43
 graph LR;
     Bronze-->Silver;
     Silver-->Gold;
-    style Bronze stroke-width:3px,stroke:#333,fill:#c62e08,rx:15,ry:15
-    style Silver stroke-width:3px,stroke:#333,fill:#dc440c,rx:15,ry:15
-    style Gold stroke-width:3px,stroke:#333,fill:#f15b10,rx:15,ry:15
+    style Bronze stroke-width:1px,stroke:#c62e08,fill:#c62e08,rx:15,ry:15
+    style Silver stroke-width:3px,stroke:#dc440c,fill:#dc440c,rx:15,ry:15
+    style Gold stroke-width:3px,stroke:#f15b10,fill:#f15b10,rx:15,ry:15
 ```
 
 Nessa estrutura, evitamos erros e inconsistencias e possibilita reprocessamento ou paralelização de forma eficiente, o que é essencial em pipelines de larga escala.
