@@ -71,10 +71,12 @@ Databricks Dashboard - [Clique aqui para ser direcionado para o dashboard](https
 
 Kaggle - [Clique aqui para ver o código](https://www.kaggle.com/code/giovanaalves/taxi-yellow)
 
-Escolhi o Kaggle para compartilhar as possibilidades de visualização de forma rápida. Já que eu ja trabalhei com esse tipo de visualização lá
+Escolhi o Kaggle para compartilhar a possibilidade de visualização do Mapa de calor. 
+
+Como se trata de um dado que pode ser transformado em coordenadas, você faz a conversão do nome/bairro que o proprio [nyc.gov](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) disponibiliza *(na tabela está como números na coluna PULocationID e DOLocationID, eles disponibilizam um arquivo excel, onde cada número corresponde a uma localização)*
 
 
-Para fazer essa visualização exportei os dados da tabela Gold como csv, limitado a 1000 rows
+Para fazer essa visualização exportei os dados da tabela Gold como csv, limitado a 1000 rows, e converti todos os números em cidade, e depois em Latitude e Longitude.
 
 ![alt text](<Screenshot 2025-08-30 201853.png>)
 
