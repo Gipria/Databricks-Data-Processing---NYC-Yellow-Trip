@@ -32,6 +32,7 @@ Notbooks nas diferentes camadas no databricks: [Bronze](https://dbc-ef780d3c-c43
 
 ### Próximo passo: Criando Jobs
 
+O job implementa uma sequência de tasks que processam os dados em etapas, garantindo que a camada Bronze seja populada antes da Silver, e assim por diante. Essa estrutura de execução encadeada permite manter a consistência dos dados mesmo em larga escala, funcionando como uma pipeline dentro de um único job.
 ```mermaid
 graph LR;
     Bronze-->Silver;
@@ -41,9 +42,8 @@ graph LR;
     style Gold stroke-width:3px,stroke:#f15b10,fill:#f15b10,rx:15,ry:15
 ```
 
-Nessa estrutura, evitamos erros e inconsistencias e possibilita reprocessamento ou paralelização de forma eficiente, o que é essencial em pipelines de larga escala.
 
- Silver(_Data_Cleaning_) não vai rodar se Bronze(_Raw_ingestion_) não rodar. Exemplo, se rodasse Gold, independente das camadas anteriores, em um job especifico para camadas Gold ele traria dados desatualizados e inconsistentes.
+>Silver(_Data_Cleaning_) não vai rodar se Bronze(_Raw_ingestion_) não rodar. Exemplo, se rodasse Gold, independente das camadas anteriores, em um job especifico para camadas Gold ele traria dados desatualizados e inconsistentes.
 
 ![alt text](image.png)
 
@@ -59,3 +59,23 @@ Nessa estrutura também temos a facilidade de debugar e monitorar erros, exemplo
 **Source:** Workspace <span style="color:gray;">(Existe git também)</span><br>
 **Compute:** Serverless  <span style="color:gray;">(No Databricks gratuíto, até então, não tem opção de modificar o Compute)</span><br>
 
+---
+
+## Consultando tabelas gold 
+
+Nessa camada, além de ter os dados disponibilizado em formato tabela dentro do notbook, podendo exportar esses dados para outras plataformas (como fiz também), e automatizar para o Dashboard Databricks que a própria ferramenta disponibiliza.
+
+Databricks Dashboard - [Clique aqui para ser direcionado para o dashboard](https://dbc-ef780d3c-c43c.cloud.databricks.com/dashboardsv3/01f08529308e1d409f4d70782e3b8d24/published?o=609239402676531)
+
+![alt text](image-1.png)
+
+Kaggle - [Clique aqui para ver o código](https://www.kaggle.com/code/giovanaalves/taxi-yellow)
+
+Escolhi o Kaggle para compartilhar as possibilidades de visualização de forma rápida. Já que eu ja trabalhei com esse tipo de visualização lá
+
+
+Para fazer essa visualização exportei os dados da tabela Gold como csv, limitado a 1000 rows
+
+![alt text](<Screenshot 2025-08-30 201853.png>)
+
+> Aqui podemos identificar onde se concentra maior número do local de inicio do trajeto.
