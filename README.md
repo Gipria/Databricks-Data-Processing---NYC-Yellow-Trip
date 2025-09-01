@@ -13,11 +13,11 @@ foco em confiabilidade, automação e análise de dados.
 
 Primeiro criei um notbook Databricks para cada camada:
 
-[Bronze](notbooks\Raw.ipynb) → dados brutos, sem transformação
+[Bronze](notbooks/Raw.ipynb) → dados brutos, sem transformação
 - Aqui coleto automaticamente apenas tabelas que contem o nome **yellow_tripdata_**, então se eu inserir uma nova tabela com esse nome de um novo mes será inserido automaticamente
 
 
-[Silver](notbooks\DataSource.ipynb) → limpeza, validação, padronização
+[Silver](notbooks/DataSource.ipynb) → limpeza, validação, padronização
 - Além de armazenar dados limpos na tabela *yellow_trip_silver*, separei os dados incompletos ou invalidos na *yellow_trip_silver_invalid*.
 Isso é importante pois além de rastrearmos possibilidades de performance com os dados limpos, os dados que identificamos como incorreto também pode nos trazer insights de qual é o causador.
  
